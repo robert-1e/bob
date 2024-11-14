@@ -64,7 +64,7 @@
 
             p.content {
                 font-family: "Comic Sans MS", "Comic Sans";
-                font-size: 22px;
+                font-size: 15px;
                 user-select: text;
             }
 
@@ -80,8 +80,19 @@
                 margin: 25px;
                 width: 450px;
                 height: 450px;
+                display: flex;
                 border-radius: 30px;
                 background-color: #c0ffd8;
+                box-shadow: 5px 5px 5px 5px #888888;
+            }
+
+            form {
+                margin: auto;
+                font-family: "Comic Sans MS", "Comic Sans";
+            }
+
+            .formline {
+                padding: 5px;
             }
         </style>
     </head>
@@ -102,14 +113,49 @@
                             Use the form on the right to book your room.<br />
                             Pick one of the following options:<br />
                             - Large bedroom for £149/night<br />
+
                             - Standard double bedroom for £99/night<br />
                             - Standard single bedrooom for £84/night<br /><br />
                             Located on 190 Mill Road, Cambridge<br />
+                            <img
+                                width="250px"
+                                src="./assets/images/bed-and-breakfast-gardens.webp"
+                                alt="Example Image" />
+                            <br />
+                            <img
+                                width="250px"
+                                src="./assets/images/breakfast-table.webp"
+                                alt="Example Image" />
                         </p>
                     </div>
                 </div>
                 <div id="form-container">
-                    <div id="form"></div>
+                    <div id="form">
+                        <form method="POST" action="https://cms-compsci.deno.dev/email">
+                            <div class="formline">
+                                Your email:<br /><input type="text" name="email" />
+                            </div>
+
+                            <div class="formline">
+                                Your phone:<br /><input type="text" name="phone" />
+                            </div>
+
+                            <div class="formline">
+                                Your name:<br /><input type="text" name="name" />
+                            </div>
+
+                            <div class="formline">
+                                Desired room:<br /><input type="text" name="room" />
+                            </div>
+
+                            <div class="formline">
+                                Desired date:<br /><input type="text" name="date" />
+                            </div>
+                            <input type="hidden" name="redirect" value="https://www.example.com/" />
+
+                            <div class="formline"><button>Send</button></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
